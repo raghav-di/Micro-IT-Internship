@@ -64,49 +64,41 @@ def show():
     except:
         ans="Error"
     lbl.config(height=1,width=40,text=ans)
-    print(ans) 
 def add0():
     global s
     s=s+'0'
     txt.delete("1.0","end")
     txt.insert("1.0",s)
-    print(s)
 def add1():
     global s
     s=s+'1'
     txt.delete("1.0","end")
     txt.insert("1.0",s)
-    print(s)
 def add2():
     global s
     s=s+'2'
     txt.delete("1.0","end")
     txt.insert("1.0",s)
-    print(s)
 def add3():
     global s
     s=s+'3'
     txt.delete("1.0","end")
     txt.insert("1.0",s)
-    print(s)
 def add4():
     global s
     s=s+'4'
     txt.delete("1.0","end")
     txt.insert("1.0",s)
-    print(s)
 def add5():
     global s
     s=s+'5'
     txt.delete("1.0","end")
     txt.insert("1.0",s)
-    print(s)
 def add6():
     global s
     s=s+'6'
     txt.delete("1.0","end")
     txt.insert("1.0",s)
-    print(s)
 def add7():
     global s
     s=s+'7'
@@ -137,7 +129,6 @@ def addadd():
     s=s+'+'
     txt.delete("1.0","end")
     txt.insert("1.0",s)
-    print(s)
 def addmul():
     global s
     s=s+'*'
@@ -164,12 +155,10 @@ def back():
         s=s[0:len(s)-1]
         txt.delete("1.0","end")
         txt.insert("1.0",s)
-        print(s)
 def clear():
     global s
     s=""
     txt.delete("1.0","end")
-    print(s)
 
 
 txt=tk.Text(root,height=2,width=20,font=("Ariel",24),bg="#5C6C81",fg="white",bd=0,selectbackground="#344151",selectforeground="white")
