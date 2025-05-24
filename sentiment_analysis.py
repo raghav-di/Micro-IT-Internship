@@ -4,23 +4,18 @@ import nltk
 nltk.download('vader_lexicon')
 from nltk.sentiment import SentimentIntensityAnalyzer
 
-# Download VADER lexicon (if not already done)
 nltk.download('vader_lexicon')
 
-# Create the analyzer
 sia = SentimentIntensityAnalyzer()
 
-# Input text
-
-st.title("SEntiment Analysis App")
+st.title("Sentiment Analysis App")
 
 user_input = st.text_input("Enter some text:")
 
-# Get sentiment scores
 scores = sia.polarity_scores(user_input)
 
-
 compound = scores['compound']
+
 if scores['pos']> scores['neu'] and scores['pos']>scores['neg']:
     sentiment = "The sentiment is Positive"
 elif scores['neg']> scores['pos'] and scores['neg']>scores['neu']:
@@ -34,9 +29,12 @@ if user_input != "":
     st.write("Result:", sentiment)
 
 fig, ax = plt.subplots(figsize=(8, 4))
+
 labels = ['Negative', 'Neutral', 'Positive']
 values = [scores['neg'], scores['neu'], scores['pos']]
+
 ax.bar(labels, values, color=['red', 'yellow', 'green',])
+
 ax.set_title('Sentiment Distribution')
 ax.set_xlabel('sentiments')
 ax.set_ylabel('Values')
