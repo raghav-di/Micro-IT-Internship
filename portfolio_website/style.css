@@ -9,6 +9,54 @@
   scroll-behavior: smooth;
 }
 
+.overlay{
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+  top: 0;
+  left: 0;
+}
+
+.ocean {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #61dafb00;
+}
+
+.wave {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x;
+  position: absolute;
+  width: 6400px;
+  top: -198px;
+  left: 0;
+  height: 198px;
+  transform: translate(0, 0, 0);
+  animation: wave 7s ease infinite;
+}
+
+.wave:nth-of-type(2) {
+  top: -168px;
+  animation: swell 4s ease infinite;
+  opacity: 1;
+}
+
+@keyframes wave {
+  0% { margin-left: 0; }
+  100% { margin-left: -1600px;}
+}
+@keyframes swell {
+  0%, 100% {
+    transform: translate(0, -30px);
+  }
+  50% {
+    transform: translate(0, 5px);
+  }
+}
+
 /* Custom Scroll Bar CSS */
 ::-webkit-scrollbar {
   width: 10px;
@@ -142,6 +190,7 @@ nav.sticky .menu-btn {
   height: 100vh;
   width: 100%;
   background: url("images/background.png") no-repeat;
+  opacity: 99%;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -260,7 +309,6 @@ section .title span::after {
 }
 
 .about .left img {
-  height: 400px;
   width: 400px;
   object-fit: cover;
   border-radius: 12px;
@@ -372,17 +420,15 @@ section .button button:hover {
 
 /* My Services CSS */
 .services .boxes {
+  padding: 20px;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 50%));
-  /* flex-wrap: wrap; */
-  justify-content: space-between;
-  background-color: #f0db4f;
+  justify-content: space-around;
 }
 
 .services .boxes .box {
-  margin: 50px;
-  width: 90%;
+  width: 100%;
   text-align: center;
   border-radius: 12px;
   padding: 30px 10px;
@@ -637,7 +683,6 @@ footer .text span a:hover {
 
 #services {
   width: 100vw;
-  background: #0088ff;
 }
 
 #services .content {
